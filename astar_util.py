@@ -34,7 +34,7 @@ def search(board: Board, robot: Robot, heuristic):
             
             path.append(temp)
             path.reverse()
-            return path, scores[node], expanded, max_q_size
+            return path, scores[node], scores, expanded, max_q_size
 
         # get the neighboring board states
         neighbors = robot.get_neighbors(node) # list of (RobotPos, cost)
