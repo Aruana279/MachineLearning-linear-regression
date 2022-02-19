@@ -40,10 +40,11 @@ class Board:
             except NameError:
                 print("Coult not open file: \n" + NameError)   
         
-        ###Random board. Args: int, int
-        elif(len(args) == 2 and isinstance(args[0], int) and isinstance(args[1], int)):
+        ###Random board. Args: int, int, filename
+        elif(len(args) == 3 and isinstance(args[0], int) and isinstance(args[1], int) and isinstance(args[2],str)):
             x = args[0]
             y = args [1]
+            file_name = args[2]
             if(x <= 2 or y <= 2):
                 return
             self.width = x
@@ -77,13 +78,14 @@ class Board:
             self.endPos = (endPosition[1], endPosition[0])
             
             self.playerPos = (startPosition[1], startPosition[0])
-            self.playerFacing = (0, -1)            
+            self.playerFacing = (0, -1)
+            self.saveBoard(file_name)
         
     def saveBoard(self, filename):
         with open(filename, 'w') as file:
             savestring = ""
-            for i in range (len(self.board)):
-                for j in range (len(self.board[i])):
+            for i in range(len(self.board)):
+                for j in range(len(self.board[i])):
                     savestring += (str(self.board[i][j]) + "\t")
                 savestring += ('\n')
             file.write(savestring)

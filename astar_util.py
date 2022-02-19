@@ -1,7 +1,7 @@
 import heapq
-from board import Board
+from AI_assignment3.board import Board
 
-from robot import Robot, RobotPosition
+from AI_assignment3.robot import Robot, RobotPosition
 import sys
 
 # implement the a star algorithm
@@ -93,3 +93,15 @@ def heuristic_5(board, rp: RobotPosition):
     
 def heuristic_6(board, rp: RobotPosition):
     return heuristic_5(board, rp) * 3
+
+def heuristic_7(board, rp:RobotPosition):
+    orient = 0
+    if rp.orientation[0] == -1:
+        orient = 1
+    if rp.orientation[0] == 1:
+        orient = 2
+    if rp.orientation[1] == 1:
+        orient = 3
+    if rp.orientation[1] == -1:
+        orient = 4
+    return 2.7231*rp.pos[0] + 2.7254 * rp.pos[1] + -0.0672 * orient+4.8767

@@ -1,7 +1,7 @@
 import sys
-from astar_util import *
-from board import Board
-from robot import Robot
+from AI_assignment3.astar_util import *
+from AI_assignment3.board import Board
+from AI_assignment3.robot import Robot
 import time
 import tracemalloc
 
@@ -9,7 +9,7 @@ input= (sys.argv)
 fileName = input[0]
 heuristic = input[1]
 
-board = Board(1000,1000)
+board = Board(200,200, "test_board.txt")
 robot = Robot(board)
 
 if (heuristic == '6'):
@@ -29,7 +29,7 @@ if (heuristic == '6'):
 if (heuristic == '5'):
     tracemalloc.start()
     tic = time.perf_counter()
-    p, c, e, q = search(board, robot, heuristic_5)
+    p, c, scores, e, q = search(board, robot, heuristic_5)
     print_output(p, c, e, q)
     # print(list(str(x) for x in p))
     # print('cost:', c)
