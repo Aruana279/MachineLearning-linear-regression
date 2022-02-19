@@ -1,3 +1,4 @@
+import csv
 import heapq
 from AI_assignment3.board import Board
 
@@ -58,7 +59,7 @@ def print_output(p, c, e, q):
     out_string = 'START at '
     for x, m in p:
         out_string += f'{x}\n{m} to get to '
-    
+
     print('cost:', c)
     print('num_steps:', len(p)-1)
     print('expanded:', e)
@@ -104,4 +105,7 @@ def heuristic_7(board, rp:RobotPosition):
         orient = 3
     if rp.orientation[1] == -1:
         orient = 4
-    return 2.7231*rp.pos[0] + 2.7254 * rp.pos[1] + -0.0672 * orient+4.8767
+
+    x = abs(rp.pos[0] - board.endPos[0])
+    y = abs(rp.pos[1] - board.endPos[1])
+    return 2.5436 * x + 2.5382 * y + 0.1263 * orient + 1.941

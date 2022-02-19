@@ -16,20 +16,21 @@ if __name__ == "__main__":
     heuristics = [heuristic_1, heuristic_2, heuristic_3, heuristic_4, heuristic_5, heuristic_6, heuristic_7]
 
     # path, scores[node], scores, expanded, max_q_size
-    p, c, scores, e, q = search(board, robot, heuristics[int(sys.argv[2])-1])
-        # state, position, orientation
-        # print to csv
-        # State (movements),
-        # X distance (Manhattan)
-        # Y distance (Manhattan)
-        # Cost
-        # Pos_x
-        # Pos_y
-        # Orientation
-        # Goal_x
-        # Goal_y
-        # robot adjacent * 8
-        # goal adjacent * 8
+    p, c, scores, e, q = search(board, robot, heuristics[int(sys.argv[2]) - 1])
+    print_output(p, c, e, q)
+    # state, position, orientation
+    # print to csv
+    # State (movements),
+    # X distance (Manhattan)
+    # Y distance (Manhattan)
+    # Cost
+    # Pos_x
+    # Pos_y
+    # Orientation
+    # Goal_x
+    # Goal_y
+    # robot adjacent * 8
+    # goal adjacent * 8
 
     # parameters = ['State', 'X-distance', 'Y-distance', 'Cost', 'Pos_x',
     #               'Pos_y', 'Orientation', 'Goal_x', 'Goal_y', 'R1', 'R2', 'R3', 'R4', 'R5', 'R6', 'R7', 'R8',
@@ -131,9 +132,7 @@ if __name__ == "__main__":
     #             i = i + 1
     #         print(f"On Board: {board_num}\n")
 
-        # file.write(savestring)
-
-    print_output(p, c, e, q)
+    # file.write(savestring)
 
 
 def get_neighbors_2(self, pos: RobotPosition):
