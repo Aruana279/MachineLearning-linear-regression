@@ -1,8 +1,8 @@
 import csv
 import heapq
-from AI_assignment3.board import Board
+from board import Board
 
-from AI_assignment3.robot import Robot, RobotPosition
+from robot import Robot, RobotPosition
 import sys
 
 # implement the a star algorithm

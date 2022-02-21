@@ -1,9 +1,9 @@
 import sys
 import csv
 
-from AI_assignment3.board import Board
-from AI_assignment3.robot import Robot
-from AI_assignment3.astar_util import *
+from board import Board
+from robot import Robot
+from astar_util import *
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:

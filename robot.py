@@ -1,4 +1,4 @@
-from AI_assignment3.board import Board
+from board import Board
 
 
 class RobotPosition:
